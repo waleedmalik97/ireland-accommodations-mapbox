@@ -157,19 +157,23 @@ def update_graph(n_clicks,region,popularity):
     return [update_map(df_filtered), update_bar(df_filtered)]
 
 
-@app.callback(
-              Output('hidden-div','children'),
-              Input('graph','clickData')
+app.clientside_callback(
+    '''
+    function(data){
+        if(data.length !== 0){
+            var list1 = data['points'];
+            var list_customdata = list1[0]['customdata'];
+            var link = list_customdata[2];
+            if(link !== null && link !== ''){
+                window.open(link);
+            }
+        }
+    }
 
+    ''',
+    Output('hidden-div','children'),
+    Input('graph','clickData')
 )
-def click_data(data):
-    if data:
-        list1 = data['points']
-        list_customdata = list1[0]['customdata']
-        link = list_customdata[2]
-        if link is not None:
-            return webbrowser.open(link)
-    return ""
 
 
 if __name__ == '__main__':
