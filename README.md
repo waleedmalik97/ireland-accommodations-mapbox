@@ -8,3 +8,4 @@ In this project, I've developed a dashboard utilizing Plotly python repo and Das
 •	A stacked bar chart showing a total of each type of accommodations against each region.
 •	A map of Ireland showing all the accommodations through a scatter plot implemented on Mapbox.
 •	A click-event for each data point on the map that leads to the specific website for that accommodation.
+
