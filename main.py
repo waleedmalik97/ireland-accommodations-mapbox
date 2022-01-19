@@ -12,6 +12,8 @@ df = pd.read_csv('https://raw.githubusercontent.com/colmr/vis_class/master/FakeA
 
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+app.title = "Explore Ireland Accommodations"
+
 server = app.server
 
 
